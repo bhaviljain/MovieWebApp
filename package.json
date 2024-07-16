@@ -18,36 +18,16 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy":"npm run build",
     "deploy":"gh-pages -d dist"
   },
   "eslintConfig": {
-    "rules": {
-      "no-unused-vars": "warn"
-    
-    },
-    "overrides": [
-      {
-        "files": ["*.js"],
-        "env": {
-          "node": true,
-          "browser": true
-        },
-        "rules": {
-        },
-        "globals": {
-        },
-        "CI": {
-          "rules": {
-           
-            "no-unused-vars": "error"
-          
-          }
-        }
-      }
+    "extends": [
+      "react-app",
+      "react-app/jest"
     ]
   },
   "browserslist": {
